@@ -153,6 +153,12 @@ public class Product implements Serializable {
         DecimalFormat formatter = new DecimalFormat("###,###,###");
         return formatter.format((price));
     }
+    
+    public String getSalePriceFormat() {
+        sale = 1.0 - sale;
+        DecimalFormat formatter = new DecimalFormat("###,###,###");
+        return formatter.format((price*sale));
+    }
 
     @XmlTransient
     public Collection<Orrderdetail> getOrrderdetailCollection() {

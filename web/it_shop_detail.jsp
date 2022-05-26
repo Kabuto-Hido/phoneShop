@@ -78,7 +78,15 @@
             <div class="product-heading">
               <h2><c:out value="${detail.name}"></c:out></h2>
             </div>
-            <div class="product-detail-side"> <!--<span><del>$25.00</del></span>--><span class="new-price"><c:out value="${detail.getPriceCurrencyFormat()}"></c:out></span> <span class="rating"> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star-o" aria-hidden="true"></i> </span> <span class="review">(5 customer review)</span> </div>
+            <c:choose>
+                <c:when test="${detail.sale != 1}">
+                    <div class="product-detail-side"> <span><del><c:out value="${detail.getPriceCurrencyFormat()}"></c:out></del></span><span class="new-price"><c:out value="${detail.getSalePriceFormat()}"></c:out></span> <span class="rating"> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star-o" aria-hidden="true"></i> </span> <span class="review">(5 customer review)</span> </div>
+                </c:when>
+                <c:when test="${detail.sale == 1}">
+                    <div class="product-detail-side"><span class="new-price"><c:out value="${detail.getPriceCurrencyFormat()}"></c:out></span> <span class="rating"> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star-o" aria-hidden="true"></i> </span> <span class="review">(5 customer review)</span> </div>
+                </c:when>           
+            </c:choose>
+            
             <div class="detail-contant">
               <p><c:out value="${detail.description}"></c:out><br>
                   <span class="stock"><b><c:out value="${detail.amount}"></c:out> in stock</b></span> </p>
@@ -190,7 +198,15 @@
                   <div class="center"> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star-o" aria-hidden="true"></i> </div>
                 </div>
                 <div class="product_price">
-                  <p><!--<span class="old_price">$15.00</span> ?--> <span class="new_price">${p.getPriceCurrencyFormat()}</span></p>
+                    <c:choose>
+                        <c:when test="${detail.sale != 1}">
+                            <p><span class="old_price">${p.getPriceCurrencyFormat()}</span> ? <span class="new_price">${p.getSalePriceFormat()}</span></p>
+                        </c:when>
+                        <c:when test="${detail.sale == 1}">
+                            <p><span class="new_price">${p.getPriceCurrencyFormat()}</span></p>
+                        </c:when>           
+                    </c:choose>
+                  
                 </div>
               </div>
             </div>

@@ -69,6 +69,8 @@
 <!-- section -->
 <div class="section padding_layout_1 product_list_main">
   <div class="container">
+        <form method="post" action="Profile">
+            <input type="hidden" name="action" value="update">
             <div class="row gutters">
             <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
             <div class="card h-100">
@@ -99,37 +101,37 @@
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                             <div class="form-group">
                                 <label for="fullName">Full Name</label>
-                                <input type="text" class="form-control" id="fullName" placeholder="Enter full name" value="<c:out value="${userInfo.username}"></c:out>">
+                                <input type="text" class="form-control" name="name" id="fullName" placeholder="Enter full name" value="<c:out value="${userInfo.username}"></c:out>">
                             </div>
                         </div>
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                             <div class="form-group">
                                 <label for="eMail">Email</label>
-                                <input type="email" class="form-control" id="email" placeholder="Enter email ID" value="<c:out value="${userInfo.email}"></c:out>">
+                                <input type="email" class="form-control" name="email" id="email" placeholder="Enter email ID" value="<c:out value="${userInfo.email}"></c:out>">
                             </div>
                         </div>
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                             <div class="form-group">
                                 <label for="phone">Phone</label>
-                                <input type="text" class="form-control" id="phone" placeholder="Enter phone number" value="<c:out value="${userInfo.phone}"></c:out>">
+                                <input type="text" class="form-control" name="phone" id="phone" placeholder="Enter phone number" value="<c:out value="${userInfo.phone}"></c:out>">
                             </div>
                         </div>
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                             <div class="form-group">
                                 <label for="website">Address</label>
-                                <input type="url" class="form-control" id="address" placeholder="Enter address" value="<c:out value="${userInfo.address}"></c:out>">
+                                <input type="text" class="form-control" name="address" id="address" placeholder="Enter address" value="<c:out value="${userInfo.address}"></c:out>">
                             </div>
                         </div>
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                             <div class="form-group">
                                 <label for="phone">Password</label>
-                                <input type="text" class="form-control" id="password" placeholder="Enter current password">
+                                <input type="password" class="form-control" name="password" id="password" placeholder="Enter current password">
                             </div>
                         </div>
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                             <div class="form-group">
                                 <label for="website">Confirm Password</label>
-                                <input type="url" class="form-control" id="confirm_password" placeholder="Confirm password">
+                                <input type="password" class="form-control" id="confirm_password" placeholder="Confirm password">
                             </div>
                         </div>
                     </div>
@@ -137,8 +139,8 @@
                     <div class="row gutters" style="margin-top: 10px;">
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                             <div class="text-right">
-                                <button type="button" id="submit" name="submit" class="btn btn-secondary">Cancel</button>
-                                <button type="button" id="submit" name="submit" class="btn btn-primary">Update</button>
+                                <button type="submit" id="submit" name="submit" class="btn btn-secondary">Cancel</button>
+                                <button type="submit" id="submit" name="submit" class="btn btn-primary">Update</button>
                             </div>
                         </div>
                     </div>
@@ -146,6 +148,7 @@
             </div>
             </div>
             </div>
+        </form>
             </div>
 </div>
 <!-- end section -->

@@ -88,7 +88,14 @@
                           </div></td>
                         <td class="col-sm-1 col-md-1" style="text-align: center"><input class="form-control" min="1" max="${maxitem}" name="quantity" value="${item.quantity}" type="number">
                         </td>
-                        <td class="col-sm-1 col-md-1 text-center"><p class="price_table">${item.productId.getPriceCurrencyFormat()}</p></td>
+                        <c:choose>
+                            <c:when test="${item.productId.sale != 1}">
+                                <td class="col-sm-1 col-md-1 text-center"><p class="price_table">${item.productId.getSalePriceFormat()}</p></td>
+                            </c:when>
+                            <c:when test="${item.productId.sale == 1}">
+                                <td class="col-sm-1 col-md-1 text-center"><p class="price_table">${item.productId.getPriceCurrencyFormat()}</p></td>
+                            </c:when>           
+                        </c:choose>
                         <td class="col-sm-1 col-md-1 text-center"><p class="price_table">${item.getUnitCurrencyFormat()}</p></td>
                         <td class="col-sm-1 col-md-1"><button type="submit" class="bt_main">Update</button></td>
                     </form>

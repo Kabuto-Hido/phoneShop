@@ -79,7 +79,15 @@
                   <div class="center"> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star-o" aria-hidden="true"></i> </div>
                 </div>
                 <div class="product_price">
-                    <p><!--<span class="old_price">{item.price}</span> ?--> <span class="new_price"><c:out value="${item.getPriceCurrencyFormat()}"></c:out></span></p>
+                <c:choose>
+                    <c:when test="${item.sale != 1}">
+                        <p><span class="old_price"><c:out value="${item.getPriceCurrencyFormat()}"></c:out> </span> ? <span class="new_price"><c:out value="${item.getSalePriceFormat()}"></c:out></span></p>
+                    </c:when>
+                    <c:when test="${item.sale == 1}">
+                        <p><span class="new_price"><c:out value="${item.getPriceCurrencyFormat()}"></c:out></span></p>
+                    </c:when>           
+                </c:choose>
+                    
                 </div>
               </div>
             </div>

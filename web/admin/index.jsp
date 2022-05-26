@@ -97,19 +97,28 @@
                                         </c:choose>
 				      <td style="width: 100px">${item.shipCode}</td>
                                       <td>
-                                        <form method="post" action="ManageOrderDetail">
-                                            <input type="hidden" name="orderId" value="${item.id}">
-                                            <input value="Detail" type="submit" style="color: #fff; text-align: center; border: none;
-                                                background: #039ee3;border-radius: 5px; height: 38px; min-width:
-                                                70px; padding: 0 15px; margin-left: 5px">
-                                        </form>
-                                        <form method="post" action="manageorder">
-                                            <input type="hidden" name="action" value="delete">
-                                            <input type="hidden" name="orderId" value="${item.id}">
-                                            <input value="Delete" type="submit" style="color: #fff; text-align: center; border: none;
-                                                background: #039ee3;border-radius: 5px; height: 38px; min-width:
-                                                70px; padding: 0 15px; margin-left: 5px; margin-top: 5px">
-                                        </form>
+                                        <c:choose>
+                                            <c:when test="${item.status == 'Da thanh toan'}">
+                                                <form method="post" action="ManageOrderDetail">
+                                                    <input type="hidden" name="orderId" value="${item.id}">
+                                                    <input value="Detail" type="submit" style="color: #fff; text-align: center; border: none;
+                                                        background: #039ee3;border-radius: 5px; height: 38px; min-width:
+                                                        70px; padding: 0 15px; margin-left: 5px">
+                                                </form>
+                                            </c:when>
+                                        </c:choose>
+                                        <c:choose>
+                                            <c:when test="${item.status == 'Chua thanh toan'}">
+                                                <form method="post" action="manageorder">
+                                                    <input type="hidden" name="action" value="delete">
+                                                    <input type="hidden" name="orderId" value="${item.id}">
+                                                    <input value="Delete" type="submit" style="color: #fff; text-align: center; border: none;
+                                                        background: #039ee3;border-radius: 5px; height: 38px; min-width:
+                                                        70px; padding: 0 15px; margin-left: 5px; margin-top: 5px">
+                                                </form>
+                                            </c:when>
+                                        </c:choose>
+                                        
                                       </td>
 				    </tr>
 				</c:forEach>

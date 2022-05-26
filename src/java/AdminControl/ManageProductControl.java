@@ -76,8 +76,8 @@ public class ManageProductControl extends HttpServlet {
                 url="/manageproduct?action=showadd";
             }
             else{
-                Double saleProduct = 0.0;
-                if(!sale.isEmpty()){
+                Double saleProduct = 1.0;
+                if(!sale.isEmpty() && Double.parseDouble(sale) < 1){       
                     saleProduct = Double.parseDouble(sale);
                 }
                 
@@ -122,12 +122,17 @@ public class ManageProductControl extends HttpServlet {
             Product product = productDao.searchById(idProduct);
             Brand brand = brandDao.searchById(idBrand);
             
+            Double saleProduct = 1.0;
+            if(!sale.isEmpty() && Double.parseDouble(sale) < 1){       
+                saleProduct = Double.parseDouble(sale);
+            }
+            
             product.setName(name);
             product.setImage(image);
             product.setAmount(Integer.parseInt(amount));
             product.setPrice(Double.parseDouble(price));
             product.setDescription(description);
-            product.setSale(Double.parseDouble(sale));
+            product.setSale(saleProduct);
             product.setIdBrand(brand);
             
             productDao.updateProduct(product);

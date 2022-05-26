@@ -52,6 +52,7 @@ public class ManageOrderControl extends HttpServlet {
             request.setAttribute("listOrders", listOrders);
         }
         else if(action.equals("delete")){
+
             orderDetailDao.deleteOrderDetail(Integer.parseInt(id));
             ordersDao.deleteOrders(Integer.parseInt(id));
             request.setAttribute("Message", "Delete Order Successed");

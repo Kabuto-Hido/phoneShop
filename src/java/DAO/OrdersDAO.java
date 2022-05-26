@@ -62,6 +62,15 @@ public class OrdersDAO {
         List<Orders> list = query.getResultList();
         return !list.isEmpty();
     }
+    
+    public boolean checkStatusOrders(int id){
+        Query query = em.createQuery("select p from Orders p where p.id = ?1 and p.status like ?2");
+        query.setParameter(1,id);
+        query.setParameter(2,"%"+"Da thanh toan"+"%");
+        List<Orders> list = query.getResultList();
+        return !list.isEmpty();
+    }
+    
     public List<Orders> getFromOrders(int userid){
         Query query = em.createQuery("select p from Orders p where p.userId.id = ?1 and p.status like ?2");
         query.setParameter(1,userid);

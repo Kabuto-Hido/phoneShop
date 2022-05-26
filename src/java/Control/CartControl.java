@@ -64,9 +64,12 @@ public class CartControl extends HttpServlet {
                 int amount =Integer.parseInt(quantity);
                 Product product = productDao.searchById(proid);
                 //get infor product to add to cart
+                Double sale = product.getSale();
                 Double price= product.getPrice();
-                //String image = product.getImage();
-                //String pro_name=product.getName();
+                if(sale != 1){
+                    price = price * (1-sale);
+                }
+                 
                 Double total = price*amount;
                 
                 if(cartDao.check(proid, userid)==true){
@@ -87,7 +90,11 @@ public class CartControl extends HttpServlet {
             else if(action.equals("update")){
                 int amount =Integer.parseInt(quantity);
                 Product product = productDao.searchById(proid);
+                Double sale = product.getSale();
                 Double price= product.getPrice();
+                if(sale != 1){
+                    price = price * (1-sale);
+                }
   
                 //get max mount product
                 int maxitem = product.getAmount();
