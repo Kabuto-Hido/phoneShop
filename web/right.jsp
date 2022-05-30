@@ -25,14 +25,6 @@
             </c:forEach>
           </div>
           <div class="side_bar_blog">
-            <h4>TAG</h4>
-            <div class="tags">
-              <ul>
-                <c:forEach var ="item" items="${listTagSearch}">
-                    <li style="background-color: ${tagsearch == item ? "#007bff":""}"><a href="search?txt=${item}">${item}</a></li>
-                </c:forEach>
-              </ul>
-            </div>
           </div>
         </div>
       </div>

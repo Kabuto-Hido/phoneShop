@@ -33,35 +33,28 @@ public class SearchControl extends HttpServlet {
         em = emf.createEntityManager();
         productDao = new ProductDAO(emf);
         brandDao = new BrandDAO(emf);
-        
-        
+            
         List<Product> listProductFound = new ArrayList<Product>();
-        listProductFound = productDao.searchByNameDetail(txtsearch);
+        listProductFound = productDao.getPagingForSearch(txtsearch, 1);
+        int countPage = productDao.getNumPageForSearch(txtsearch);
+            
         if(listProductFound.isEmpty()){
             String message="NO RESULTS FOUND";
             String btn="Back Home";
             request.setAttribute("notfoundtxt",message);
             request.setAttribute("btn",btn);
             
-            getServletContext()
-                .getRequestDispatcher("/notfound.jsp")
-                .forward(request, response);
+            url="/notfound.jsp";
         }
         request.setAttribute("listProduct", listProductFound);
         request.setAttribute("txtsearch",txtsearch);
+        request.setAttribute("indexPage",1);
+        request.setAttribute("pageNum", countPage);
         
         List<Brand> listCategory = new ArrayList<Brand>();
         listCategory = brandDao.getAllBrand();
         request.setAttribute("listCategory", listCategory);
         
-        List<String> listTagSearch = new ArrayList<>();
-        listTagSearch.add("Gaming");
-        listTagSearch.add("Văn phòng");
-        listTagSearch.add("SSD");
-        listTagSearch.add("Ram");
-        listTagSearch.add("Lenovo");
-        
-        request.setAttribute("listTagSearch", listTagSearch);
         request.setAttribute("tagsearch", txtsearch);
         
         getServletContext()

@@ -42,7 +42,7 @@ public class HomeControl extends HttpServlet {
             um = new ProductDAO(emf);
             session = request.getSession();
             List<Product> listProduct = new ArrayList<Product>();
-            listProduct = um.getAll();
+            listProduct = um.get_3Product("1", 1);
             session.setAttribute("listProduct", listProduct);
         }
         getServletContext()

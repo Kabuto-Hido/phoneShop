@@ -116,6 +116,34 @@ public class ProductDAO {
         return list;
     }
     
+    public int getNumPageForSearch(String nameSearch){
+        Query query = em.createQuery("SELECT p FROM Product p WHERE p.name like ?1 or p.description like ?2 or p.idBrand.name like ?3");
+        query.setParameter(1,"%"+nameSearch+"%");
+        query.setParameter(2,"%"+nameSearch+"%");
+        query.setParameter(3,"%"+nameSearch+"%");
+        List list = query.getResultList();
+        if(!list.isEmpty()){
+            int total = list.size();
+            int countPage=0;
+            countPage=total/6;
+            if(total%6!=0){
+                countPage++;
+            }
+            return countPage;
+        }
+        else {
+            return 0;
+        }
+    }
+    public List<Product> getPagingForSearch(String nameSearch,int index) {
+        Query query = em.createQuery("SELECT p FROM Product p WHERE p.name like ?1 or p.description like ?2 or p.idBrand.name like ?3");
+        query.setParameter(1,"%"+nameSearch+"%");
+        query.setParameter(2,"%"+nameSearch+"%");
+        query.setParameter(3,"%"+nameSearch+"%");
+        List<Product> list = query.setFirstResult((index-1)*6).setMaxResults(6).getResultList();
+        return list;
+    }
+    
     public boolean checkBrandExistInProduct(String id){
         int idBrand=Integer.parseInt(id);
         Query query = em.createQuery("select p from Product p where p.idBrand.id = ?1");

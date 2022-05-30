@@ -50,14 +50,6 @@ public class ShopControl extends HttpServlet {
             request.setAttribute("tag","1");
             request.setAttribute("listCategory", listCategory);
             
-            List<String> listTagSearch = new ArrayList<>();
-            listTagSearch.add("Gaming");
-            listTagSearch.add("Văn phòng");
-            listTagSearch.add("SSD");
-            listTagSearch.add("Ram");
-            listTagSearch.add("Lenovo");
-            request.setAttribute("listTagSearch", listTagSearch);
-            
         }
             getServletContext()
                 .getRequestDispatcher(url)
