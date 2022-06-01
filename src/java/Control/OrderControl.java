@@ -151,7 +151,7 @@ public class OrderControl extends HttpServlet {
                 Double subtotal = order.getTotalPrice();
                 Double total = subtotal;
                 //exsist invoice and get totalmoney
-                if(sale==1){
+                if(sale!=1){
                     JOptionPane.showMessageDialog(null, "You just can enter coupon one time!!", "Info", JOptionPane.INFORMATION_MESSAGE);
                 }
                 else if(coupon.equals("SALE10")){
