@@ -70,8 +70,12 @@ public class ManageProductControl extends HttpServlet {
             request.setAttribute("listBrand", listBrand);
             url="/admin/insertproduct.jsp";
         }
-        else if(action.equals("add")){       
-            if(productDao.checkExistProduct(name)){
+        else if(action.equals("add")){
+            if (name.isEmpty() || amount.isEmpty() || price.isEmpty()) {
+                request.setAttribute("Message", "Invalid input");
+                url="/manageproduct?action=show";
+            }
+            else if(productDao.checkExistProduct(name)){
                 request.setAttribute("errorMessage", name +" Already Exsist");
                 url="/manageproduct?action=showadd";
             }

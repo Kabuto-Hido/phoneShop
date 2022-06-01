@@ -3,11 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/KBT/IdeaProjects/Phone_web/web/admin/index.jsp</file>
-            <file>file:/C:/Users/KBT/IdeaProjects/Phone_web/src/java/Control/OrderControl.java</file>
-            <file>file:/C:/Users/KBT/IdeaProjects/Phone_web/src/java/Control/CartControl.java</file>
+            <file>file:/C:/Users/KBT/IdeaProjects/Phone_web/src/java/AdminControl/ManageProductControl.java</file>
+            <file>file:/C:/Users/KBT/IdeaProjects/Phone_web/src/java/AdminControl/ManageUserControl.java</file>
             <file>file:/C:/Users/KBT/IdeaProjects/Phone_web/src/java/Control/ProductDetailControl.java</file>
             <file>file:/C:/Users/KBT/IdeaProjects/Phone_web/web/it_profile.jsp</file>
+            <file>file:/C:/Users/KBT/IdeaProjects/Phone_web/src/java/AdminControl/ManageBrandControl.java</file>
+            <file>file:/C:/Users/KBT/IdeaProjects/Phone_web/web/admin/insertproduct.jsp</file>
         </group>
     </open-files>
 </project-private>

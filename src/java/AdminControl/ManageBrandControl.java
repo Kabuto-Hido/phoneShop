@@ -49,7 +49,11 @@ public class ManageBrandControl extends HttpServlet {
             url="/admin/brand.jsp";
         }
         else if(action.equals("add")){
-            if(brandDao.checkExistBrand(name)){
+            if (name.isEmpty()) {
+                request.setAttribute("Message", "Please enter brand name!");
+                url="/managebrand?action=show";
+            }
+            else if(brandDao.checkExistBrand(name)){
                 request.setAttribute("errorMessage", name +" Already Exsist");
                 url="/admin/insertbrand.jsp";
             }
