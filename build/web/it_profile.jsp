@@ -68,9 +68,10 @@
 <!-- end inner page banner -->
 <!-- section -->
 <div class="section padding_layout_1 product_list_main">
-  <div class="container">
-        <form method="post" action="Profile">
-            <input type="hidden" name="action" value="update">
+    <font style="color:#F24638; margin-left: 150px"><c:out value="${msg}"></c:out></font>  
+    <form method="post" action="Profile">
+                <input type="hidden" name="action" value="update">    
+  <div class="container">    
             <div class="row gutters">
             <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
             <div class="card h-100">
@@ -91,65 +92,76 @@
                 </div>
             </div>
             </div>
-            <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
-            <div class="card h-100">
-                <div class="card-body">
-                    <div class="row gutters">
-                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                            <h6 class="mb-2 text-primary">Personal Details</h6>
-                        </div>
-                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                            <div class="form-group">
-                                <label for="fullName">Full Name</label>
-                                <input type="text" class="form-control" name="name" id="fullName" placeholder="Enter full name" value="<c:out value="${userInfo.username}"></c:out>">
+            
+                <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <div class="row gutters">
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                <h6 class="mb-2 text-primary">Personal Details</h6>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                <div class="form-group">
+                                    <label for="fullName">Full Name</label>
+                                    <input type="text" class="form-control" name="name" id="fullName" placeholder="Enter full name" value="<c:out value="${userInfo.username}"></c:out>">
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                <div class="form-group">
+                                    <label for="eMail">Email</label>
+                                    <input type="email" class="form-control" name="email" id="email" placeholder="Enter email ID" value="<c:out value="${userInfo.email}"></c:out>">
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                <div class="form-group">
+                                    <label for="phone">Phone</label>
+                                    <input type="text" class="form-control" name="phone" id="phone" placeholder="Enter phone number" value="<c:out value="${userInfo.phone}"></c:out>">
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                <div class="form-group">
+                                    <label for="website">Address</label>
+                                    <input type="text" class="form-control" name="address" id="address" placeholder="Enter address" value="<c:out value="${userInfo.address}"></c:out>">
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                <div class="form-group">
+                                    <label for="phone">Password</label>
+                                    <input type="password" class="form-control" name="password" id="password" placeholder="Enter current password">
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                <div class="form-group">
+                                    <label for="website">Confirm Password</label>
+                                    <input type="password" class="form-control" name="confirm_password" placeholder="Confirm password">
+                                </div>
                             </div>
                         </div>
-                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                            <div class="form-group">
-                                <label for="eMail">Email</label>
-                                <input type="email" class="form-control" name="email" id="email" placeholder="Enter email ID" value="<c:out value="${userInfo.email}"></c:out>">
+
+                        <div class="row gutters" style="margin-top: 10px;">
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                <div class="text-right">
+                                    <button type="submit" id="submit" name="submit" class="btn btn-primary">Update</button>
+                                    
+                                </div>
                             </div>
                         </div>
-                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                            <div class="form-group">
-                                <label for="phone">Phone</label>
-                                <input type="text" class="form-control" name="phone" id="phone" placeholder="Enter phone number" value="<c:out value="${userInfo.phone}"></c:out>">
+                        </form>
+                        <div class="row gutters" style="margin-top: 10px;">
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                <div class="text-right">
+                                    <form method="post" action="Profile">
+                                        <input type="hidden" name="action" value="cancel">
+                                        <button type="submit" id="submit" name="submit" class="btn btn-secondary">Cancel</button>
+                                    </form>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                            <div class="form-group">
-                                <label for="website">Address</label>
-                                <input type="text" class="form-control" name="address" id="address" placeholder="Enter address" value="<c:out value="${userInfo.address}"></c:out>">
-                            </div>
-                        </div>
-                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                            <div class="form-group">
-                                <label for="phone">Password</label>
-                                <input type="password" class="form-control" name="password" id="password" placeholder="Enter current password">
-                            </div>
-                        </div>
-                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                            <div class="form-group">
-                                <label for="website">Confirm Password</label>
-                                <input type="password" class="form-control" id="confirm_password" placeholder="Confirm password">
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="row gutters" style="margin-top: 10px;">
-                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                            <div class="text-right">
-                                <button type="submit" id="submit" name="submit" class="btn btn-secondary">Cancel</button>
-                                <button type="submit" id="submit" name="submit" class="btn btn-primary">Update</button>
-                            </div>
-                        </div>
-                    </div>
+                        </div>    
+                </div>
                 </div>
             </div>
             </div>
-            </div>
-        </form>
-            </div>
+</div>
 </div>
 <!-- end section -->
 <!-- footer -->

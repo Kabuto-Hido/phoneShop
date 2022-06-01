@@ -62,7 +62,7 @@ public class SignUpControl extends HttpServlet {
                     .getRequestDispatcher("/it_signup.jsp")
                     .forward(request, response);
         }
-        else if(userDao.isValid(password_1) == false){
+        else if(!userDao.isValid(password_1)){
             request.setAttribute("msg", "Password must contain at least one digits and have at least eight characters!");
             request.setAttribute("username", username);
             request.setAttribute("name", name);
