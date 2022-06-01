@@ -77,7 +77,7 @@ public class ManageProductControl extends HttpServlet {
             }
             
             else if(productDao.checkExistProduct(name)){
-                request.setAttribute("errorMessage", name +" Already Exsist");
+                request.setAttribute("Message", name +" Already Exsist");
                 url="/manageproduct?action=show";
             }
             else{
