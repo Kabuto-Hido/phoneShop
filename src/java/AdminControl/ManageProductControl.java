@@ -72,8 +72,8 @@ public class ManageProductControl extends HttpServlet {
         }
         else if(action.equals("add")){
             if (name.isEmpty() || amount.isEmpty() || price.isEmpty()) {
-                request.setAttribute("Message", "Invalid input");
-                url="/manageproduct?action=show";
+                request.setAttribute("errorMessage", "Invalid input");
+                url="/manageproduct?action=showadd";
             }
             else if(productDao.checkExistProduct(name)){
                 request.setAttribute("errorMessage", name +" Already Exsist");

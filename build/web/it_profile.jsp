@@ -103,7 +103,7 @@
                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                                 <div class="form-group">
                                     <label for="fullName">Full Name</label>
-                                    <input type="text" class="form-control" name="name" id="fullName" placeholder="Enter full name" value="<c:out value="${userInfo.username}"></c:out>">
+                                    <input type="text" class="form-control" name="name" id="fullName" placeholder="Enter full name" value="<c:out value="${userInfo.name}"></c:out>">
                                 </div>
                             </div>
                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">

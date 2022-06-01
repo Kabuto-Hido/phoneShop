@@ -5,9 +5,7 @@
         <group>
             <file>file:/C:/Users/KBT/IdeaProjects/Phone_web/src/java/AdminControl/ManageProductControl.java</file>
             <file>file:/C:/Users/KBT/IdeaProjects/Phone_web/src/java/AdminControl/ManageUserControl.java</file>
-            <file>file:/C:/Users/KBT/IdeaProjects/Phone_web/src/java/Control/ProductDetailControl.java</file>
-            <file>file:/C:/Users/KBT/IdeaProjects/Phone_web/web/it_profile.jsp</file>
-            <file>file:/C:/Users/KBT/IdeaProjects/Phone_web/src/java/AdminControl/ManageBrandControl.java</file>
+            <file>file:/C:/Users/KBT/IdeaProjects/Phone_web/src/conf/persistence.xml</file>
             <file>file:/C:/Users/KBT/IdeaProjects/Phone_web/web/admin/insertproduct.jsp</file>
         </group>
     </open-files>
